@@ -12,9 +12,6 @@ parser.add_argument("--covs",type=str,default=None) # list of covariates
 parser.add_argument("--corr_batch",type=bool, default=False) # whether to correct for batch 
 parser.add_argument("--ks",type=str, default=None) # user-defined values
 args = parser.parse_args()
-#print('\n\n****')
-#print(args)
-#print('****\n\n')
 
 d = cna.read(args.sc_object_path)
 
@@ -41,9 +38,6 @@ else:
 max_k = np.max(sel_nampcs)
 
 # save NAM-PC loadings per sample in 
-fid = [d.samplem.index[i].split("_")[0] for i in np.arange(d.samplem.shape[0])]
-iid = [d.samplem.index[i].split("_")[1] for i in np.arange(d.samplem.shape[0])]
 nampcs = d.uns['NAM_sampleXpc'].iloc[:,:max_k]
-nampcs.insert(0,"IID", iid)
-nampcs.insert(0,"FID", fid)
+nampcs.insert(0,"#IID", d.samplem.index)
 nampcs.to_csv(args.res_folder+"nampcs.csv", index=False, sep = "\t")

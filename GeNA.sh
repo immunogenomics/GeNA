@@ -50,15 +50,16 @@ echo "Formatting input for PLINK"
 eval $command
 k_max=$(awk 'NR==1{max = $1 + 0; next} {if ($1 > max) max = $1;} END {print max}' ${res_folder}ks.csv)
 
-### Applies PLINK to generate a test statistic reflecting the relationship between each allele and a single NAMPC                                                            
+### Applies PLINK to generate a test statistic reflecting the relationship between each allele and a single NAMPC                  
 mkdir -p ${res_folder}plink_per_nampc
 command="plink2 --pfile ${gtypes} --pheno ${res_folder}nampcs.csv --glm --prune --out ${res_folder}plink_per_nampc/NAM"
+echo $command
 eval $command
 
 command="paste"
 for n_nampc in $(eval echo "{1..$k_max}")
 do
-    command+=" <(awk 'NR>1 {print \$11}' ${res_folder}plink_per_nampc/NAM.PC${n_nampc}.glm.linear)"
+    command+=" <(awk 'NR>1 {print \$11}' ${res_folder}plink_per_nampc/NAM.PC${n_nampc}.glm.linear )"
 done
 command+="> ${res_folder}t_per_nampc.txt"
 echo "Gathering metrics across NAM-PCs"
@@ -78,11 +79,15 @@ do
     command+=" <(awk '{print \$$i_col}' ${res_folder}plink_per_nampc/NAM.PC1.glm.linear)"
 done
 command+=" ${res_folder}P_k.txt" 
+
 for n_nampc in $(eval echo "{1..$k_max}")
 do
-    command+=" <(awk '{print \$9}' ${res_folder}plink_per_nampc/NAM.PC${n_nampc}.glm.linear)"
+    awk_str='"BETA", "BETA_NAMPC'
+    awk_str+=$(echo $n_nampc)
+    awk_str+='"'
+    command+=" <(awk '{print \$9}' ${res_folder}plink_per_nampc/NAM.PC${n_nampc}.glm.linear | awk '(NR==1){gsub($awk_str, \$0);}{print;}' )"
 done
-command+=" > ${res_folder}GeNA_res.txt"
+command+=" > ${res_folder}GeNA_sumstats.txt"
 echo "Assembling GeNA results file"                                                                                                
 eval $command
 
