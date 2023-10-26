@@ -19,8 +19,7 @@ for(k in ks){
     all_res[paste0("k",k,"_P")] = apply(as.matrix(rowSums(all_res[,c(1:k), drop=FALSE]), ncol=1), 1, pchisq, df = k, lower = F)
 }
 all_res['P'] = apply(as.matrix(all_res[,paste0("k",ks,"_P"), drop=FALSE], ncol=length(ks)), 1, min)
-all_res['P'] = all_res['P']*length(ks)
-all_res[all_res$P > 1,'P'] = 1
+all_res['P'] = 1-(1-all_res['P'])**2
 all_res['k']= apply(as.matrix(all_res[,paste0("k",ks,"_P"), drop=FALSE], ncol=length(ks)), 1, which.min)
 all_res['k'] = ks[all_res$k]
 write.table(all_res[,c("P", "k")], args$outfile, quote=FALSE, row.names=FALSE, sep = "\t")
