@@ -1,0 +1,25 @@
+PLINK v2.00a2.3LM 64-bit Intel (24 Jan 2020)
+Options in effect:
+  --make-pgen
+  --out gtypes
+  --vcf gtypes.vcf.gz
+
+Hostname: cn004.research.partners.org
+Working directory: /data/srlab/lrumker/MCSC_Project/cna-qtl/tutorial_makedata
+Start time: Mon Nov 13 22:08:49 2023
+
+Random number seed: 1699931329
+128936 MiB RAM detected; reserving 64468 MiB for main workspace.
+Using up to 24 threads (change this with --threads).
+--vcf: 10180 variants scanned.
+--vcf: gtypes-temporary.pgen + gtypes-temporary.pvar + gtypes-temporary.psam
+written.
+100 samples (0 females, 0 males, 100 ambiguous; 100 founders) loaded from
+gtypes-temporary.psam.
+10180 variants loaded from gtypes-temporary.pvar.
+Note: No phenotype data present.
+Writing gtypes.psam ... done.
+Writing gtypes.pvar ... done.
+Writing gtypes.pgen ... done.
+
+End time: Mon Nov 13 22:08:49 2023
