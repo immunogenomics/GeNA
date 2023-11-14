@@ -4,13 +4,18 @@
 We have evaluated GeNA in simulation to assess calibration and statistical power and we have applied `GeNA` in a genome-wide survey to sc-mRNAseq profiling from a population cohort of 969 individuals. Scripts documenting our use of `GeNA` in these analyses for our manuscript are found in a separate repository, [immunogenomics/GeNA-applied](https://github.com/immunogenomics/GeNA-applied/). For more information about GeNA please refer to our preprint linked [here].
 
 # Installation
-To use `GeNA`, you can clone this repository and add it to your `PYTHONPATH`.
+To use `GeNA`, you can clone this repository.
+Dependencies:
+- Python version 3.8.10
+- R version 4.1.1
+- PLINK version 2.00a2.3
+- CNA version 0.1.6
 
 # Tutorial
-Coming soon!
+We illustrate how to use `GeNA` in a tutorial [here](https://github.com/immunogenomics/GeNA/blob/main/tutorial/Example_csaQTL_GWAS.ipynb). First, we demonstrate how to construct the single-cell data object format `GeNA` expects, then we summarize the arguments input to and files output from a call to `GeNA`. Finally, we illustrate basic characterization of example loci.
 
 # Citation
-If you use `GeNA` in your work, you can cite our preprint as: <>
+If you use `GeNA` in your work, you can cite our preprint as: (Coming soon!)
 
 # Contact
 If you have questions about `GeNA` or require user support, please contact Laurie Rumker (Laurie_Rumker AT hms.harvard.edu) or post an issue on this repo.
