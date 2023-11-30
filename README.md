@@ -1,7 +1,7 @@
 # GeNA
 `GeNA` (Genotype-Neighborhood Associations) is a tool for identifying genetic variant associations to the abundance of cell states in single-cell datasets (cell state abundance quantitative trait loci, csaQTLs). In `GeNA`, we have adapted the framework we developed for [Covarying Neighborhood Analysis](https://github.com/immunogenomics/cna) in order to enable genome-wide csaQTL surveys in single-cell data. Instead of testing associations to predefined cell types, `GeNA` identifies the granular cell states whose abundance is most associated with genetic variants. The scripts required to run `GeNA` are stored in this repo.
 
-We have evaluated GeNA in simulation to assess calibration and statistical power and we have applied `GeNA` in a genome-wide survey to scRNA-seq profiling from a population cohort of 969 individuals. Scripts documenting our use of `GeNA` in these analyses for our manuscript are found in a separate repository, [immunogenomics/GeNA-applied](https://github.com/immunogenomics/GeNA-applied/).
+We have evaluated GeNA in simulation to assess calibration and statistical power and we have applied `GeNA` in a genome-wide survey to scRNA-seq profiling from a cohort of 969 individuals. Scripts documenting our use of `GeNA` in these analyses for our manuscript are found in a separate repository, [immunogenomics/GeNA-applied](https://github.com/immunogenomics/GeNA-applied/).
 
 # Installation
 To use `GeNA`, you can clone this repository.
