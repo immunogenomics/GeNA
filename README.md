@@ -10,6 +10,7 @@ Dependencies:
 - R version 4.1.1
 - PLINK version 2.00a2.3
 - CNA version 0.1.6
+- Rmpfr version 0.8-7
 
 # Tutorial
 We illustrate how to use `GeNA` in a tutorial [here](https://github.com/immunogenomics/GeNA/blob/main/tutorial/Example_csaQTL_GWAS.ipynb). First, we demonstrate how to construct the single-cell data object format `GeNA` expects, then we summarize the arguments input to and files output from a call to `GeNA`. Finally, we illustrate basic characterization of example loci.
