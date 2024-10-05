@@ -16,7 +16,7 @@ Dependencies:
 We illustrate how to use `GeNA` in a tutorial [here](https://github.com/immunogenomics/GeNA/blob/main/tutorial/Example_csaQTL_GWAS.ipynb). First, we demonstrate how to construct the single-cell data object format `GeNA` expects, then we summarize the arguments input to and files output from a call to `GeNA`. Finally, we illustrate basic characterization of example loci.
 
 # Citation
-If you use `GeNA` in your work, you can cite our preprint [here](https://www.biorxiv.org/content/10.1101/2023.11.13.566919v1)
+If you use `GeNA` in your work, you can cite our paper [here](https://www.nature.com/articles/s41588-024-01909-1)
 
 # Contact
 If you have questions about `GeNA` or require user support, please contact Laurie Rumker (Laurie_Rumker AT hms.harvard.edu) or post an issue on this repo.
